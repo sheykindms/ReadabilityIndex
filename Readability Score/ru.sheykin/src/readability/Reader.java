@@ -7,16 +7,7 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 class Reader {
-
-    protected void run(String fileAddress) {
-        ReadabilityTests readabilityTests = new ReadabilityTests();
-        String inputString = read(fileAddress);
-        readabilityTests.countStatistics(inputString);
-        readabilityTests.resultPrinter();
-        }
-
-    protected String read(String fileAddress) {
-
+    public String read(String fileAddress) {
         StringBuilder contentBuilder = new StringBuilder();
         try (Stream<String> stream =
                      Files.lines(Paths.get(fileAddress), StandardCharsets.UTF_8)) {
